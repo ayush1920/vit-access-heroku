@@ -69,11 +69,6 @@ def getTimeTable(trig=0):
 
 @app.route("/getDate", methods = ['GET','POST'])
 def curdate():
-    val = request.get_json(force=True)
-    regid = val["regid"]
-    password = val["pass"]
-    return regid+password
-
     monthlist={1:"Jan",2:"Feb",3:"Mar",4:"Apr",5:"May",6:"Jun",7:"Jul",8:"Aug",9:"Sep",10:"Oct",11:"Nov",12:"Dec" }
     date = str(datetime.now(pytz.timezone('Asia/Kolkata'))).split(" ")[0].split("-")[::-1]
     date[1]=monthlist[int(date[1])]
